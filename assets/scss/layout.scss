@@ -1,0 +1,176 @@
+@use 'variables' as *;
+
+html, body {
+    width: 100%;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+/* wrap */
+.wrap {
+    @include grid_box($col: auto 1fr);
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+        "header header"
+        "aside main";
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* header */
+header {
+    grid-area: header;
+    > nav {
+        @include flex_row($just: space-between, $align: center);
+        width: 100%;
+        height: 100%;
+        padding: 0 40px;
+        border-bottom: 1px solid var(--color-gray4);
+        background-color: var(--color-white);
+        .logo {
+            display: block;
+            width: 214px;
+        }
+        .user {
+            @include flex_row($align: center, $gap: 0 10px);
+            button {
+                width: 30px;
+                height: 30px;
+                background-size: 100%;
+            }
+        }
+    }
+}
+
+/* aside */
+aside {
+    grid-area: aside;
+    min-height: 0;
+    position: relative;
+    padding-left: 70px;
+    border-right: 1px solid var(--color-gray4);
+    transition: padding var(--transition-base);
+}
+
+/* aside - menu */
+.menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom:0;
+    z-index: 999;
+    width: 70px;
+    height: 100%;
+    padding: 15px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: var(--color-gray2);
+    transition: all var(--transition-base);
+    &::-webkit-scrollbar {display: none;}
+    .gnb {
+        @include flex_col($gap: 16px 0);
+        > li:first-of-type {
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--color-gray4);
+            .item {width: 40px;}
+        }
+        .item {
+            display: block;
+            position: relative;
+            border-radius: 5px;
+            transition: background-color var(--transition-base);
+            > i {
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 30px;
+            }
+            > span {
+                display: inline-block;
+                position: absolute;
+                left: 46px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-weight: 500;
+                font-size: 1.0625rem;
+                white-space: nowrap;
+                color: var(--color-navy);
+                opacity: 1;
+                transition: opacity var(--transition-base);
+            }
+            &:hover,
+            &.active {
+                background-color: var(--color-primary);
+                > span {color: var(--color-white);}
+            }
+        }
+    }
+}
+
+/* aside - menu */
+.menuSub {
+    width: 240px;
+    max-height: 100%;
+    padding: 15px 30px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {display: none;}
+    > h2 {
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--color-gray4);
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -0.36px;
+    }
+    .lnb {
+        @include flex_col($gap: 12px 0);
+        padding-top: 16px;
+        .item {
+            display: block;
+            padding: 12px 16px;
+            border-radius: 5px;
+            font-weight: 500;
+            letter-spacing: -0.32px;
+            color: var(--color-gray8);
+            &:hover {color: var(--color-primary);}
+            &.active {
+                font-weight: 700;
+                color: var(--color-primary);
+                background-color: var(--color-gray2);
+            }
+        }
+    }
+}
+
+/* main */
+main {
+    @include flex_col($gap: 20px);
+    grid-area: main;
+    min-width: 0;
+    min-height: 0;
+    padding: 20px;
+    background-color: var(--color-gray4);
+    overflow: auto;
+}
+
+/* box */
+.box_content {
+    @include flex_col();
+    flex: 1;
+    min-width: 1100px;
+    border-radius: 20px;
+    background-color: var(--color-white);
+}
+.box_content.fit {min-width: auto;}
+.box_item {
+    @include flex_col($gap: 20px 0);
+    flex: 1;
+    padding: 20px 40px 40px;
+}
