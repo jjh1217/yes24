@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YES24 크레마클럽</title>
+    
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://b2b.yes24.com/admin">
+    <meta property="og:title" content="YES24 CREMA CLUB B2B Admin System">
+    <meta property="og:description" content="YES24 CREMA CLUB B2B 관리자 시스템으로 기업 고객의 주문, 정산, 회원 관리 등을 손쉽게 할 수 있습니다.">
+    <meta property="og:image" content="https://b2b.yes24.com/assets/img/sns_logo.png">
+
+    <!-- favicon -->
+    <link rel="icon" href="../assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
+
+    <!-- script -->
+    <script type="text/javascript" src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./assets/js/common.js"></script>
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- dashboard -->
+    <script type="text/javascript" src="./assets/js/dashboard.js"></script>
+
+    <script>
+        $(function(){
+            //swiper - 계약 종료 임박 고객사 list
+            var list_swiper = new Swiper(".dlSwiper", {
+                slidesPerView: 1,
+                grid: {rows: 4},
+                loop: false,
+                rewind: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".dl-next",
+                    prevEl: ".dl-prev",
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <aside></aside>
+
+        <main>
+            <section class="dash_tit">
+                <h2>YES24 관리자&ensp;대시보드</h2>
+                <div class="item">
+                    <span>2026.02.20</span>
+                    <button type="button" class="btn fill_blue pdf confirm_open" data-type="pdfDownload">PDF 다운로드</button>
+                </div>
+            </section>
+            <section class="box_tie py_30">
+                <article class="dash_user">
+                    <p>안녕하세요. <span>구름가득미디어</span>입니다.</p>
+                    <ul class="tab_box as_start big">
+                        <li><a href="./dashboard.html" class="item active">YES24 관리자</a></li>
+                        <li><a href="./dashboard_flat.html" class="item">고객사 (정액제)</a></li>
+                        <li><a href="./dashboard_usage.html" class="item">고객사 (종량제)</a></li>
+                    </ul>
+                </article>
+            </section>
+            <section class="box_tie">
+                <div class="fx_row ai_normal g_40">
+                    <article class="box_content wn_auto">
+                        <div class="tit_box type2">
+                            <h3>고객사 현황</h3>
+                        </div>
+                        <div class="box_item fx_dr g_30 p_40">
+                            <div class="dash_stats">
+                                <h4>정액제</h4>
+                                <ul>
+                                    <li class="item">
+                                        <span>누적 고객사</span>
+                                        <strong>56</strong>
+                                    </li>
+                                    <li class="item">
+                                        <span>사용 고객사</span>
+                                        <strong class="c_primary">27</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dash_stats">
+                                <h4>종량제</h4>
+                                <ul>
+                                    <li class="item">
+                                        <span>누적 고객사</span>
+                                        <strong>66</strong>
+                                    </li>
+                                    <li class="item">
+                                        <span>사용 고객사</span>
+                                        <strong class="c_primary">38</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="box_content wn_auto of_hidden">
+                        <div class="tit_box type2">
+                            <h3>계약 종료 임박 고객사</h3>
+                        </div>
+                        <div class="box_item p_30">
+                            <div class="swiper dlSwiper">
+                                <ul class="swiper-wrapper dash_list">
+                                    <li class="swiper-slide item">
+                                        <strong>홍익대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">25. 12. 10 -</span>&nbsp;
+                                            <span class="c_primary">26. 03. 03</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>서울대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">24. 05. 21 -</span>&nbsp;
+                                            <span class="c_primary">24. 08. 30</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>연세대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">23. 09. 15 -</span>&nbsp;
+                                            <span class="c_primary">23. 12. 12</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>고려대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">25. 01. 05 -</span>&nbsp;
+                                            <span class="c_primary">25. 04. 10</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>성균관대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">24. 03. 01 -</span>&nbsp;
+                                            <span class="c_primary">24. 06. 05</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>한양대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">23. 07. 12 -</span>&nbsp;
+                                            <span class="c_primary">23. 10. 20</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>경희대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">25. 02. 18 -</span>&nbsp;
+                                            <span class="c_primary">25. 05. 25</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>이화여자대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">24. 11. 03 -</span>&nbsp;
+                                            <span class="c_primary">25. 02. 08</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>중앙대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">23. 06. 09 -</span>&nbsp;
+                                            <span class="c_primary">23. 09. 15</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>부산대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">25. 08. 01 -</span>&nbsp;
+                                            <span class="c_primary">25. 11. 10</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>전북대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">24. 04. 12 -</span>&nbsp;
+                                            <span class="c_primary">24. 07. 18</span>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide item">
+                                        <strong>경북대학교</strong>
+                                        <div>
+                                            <span class="c_gray8">23. 10. 05 -</span>&nbsp;
+                                            <span class="c_primary">24. 01. 15</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="pagination-wrapper">
+                                    <div class="swiper-button-prev dl-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next dl-next"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="fx_row ai_normal g_40">
+                    <article class="box_content wn_auto">
+                        <div class="tit_box type2">
+                            <h3>정액제 콘텐츠 이용 통계</h3>
+                        </div>
+                        <div class="box_item p_30">
+                            <ul class="dash_list">
+                                <li class="item">
+                                    <strong>성균관대학교</strong>
+                                    <div>
+                                        <span class="c_primary">33,000</span>
+                                        <span class="t_sb">&nbsp;건</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <strong>한양대학교</strong>
+                                    <div>
+                                        <span class="c_primary">33,000</span>
+                                        <span class="t_sb">&nbsp;건</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <strong>경희대학교</strong>
+                                    <div>
+                                        <span class="c_primary">33,000</span>
+                                        <span class="t_sb">&nbsp;건</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <strong>부산대학교</strong>
+                                    <div>
+                                        <span class="c_primary">33,000</span>
+                                        <span class="t_sb">&nbsp;건</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <strong>전북대학교</strong>
+                                    <div>
+                                        <span class="c_primary">33,000</span>
+                                        <span class="t_sb">&nbsp;건</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="box_content wn_auto">
+                        <div class="tit_box type2">
+                            <h3>종량제 예산 사용량 상위 고객사</h3>
+                        </div>
+                        <div class="box_item p_30">
+                            <ul class="dash_list">
+                                <li class="item">
+                                    <strong>성균관대학교</strong>
+                                    <div>
+                                        <p>사용 금액 <span>3,800,000</span></p>
+                                        <span class="c_gray8">총 예산&ensp;</span>
+                                        <span>5,000,000</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <strong>한양대학교</strong>
+                                    <div>
+                                        <p>사용 금액 <span>3,700,000</span></p>
+                                        <span class="c_gray8">총 예산&ensp;</span>
+                                        <span>5,000,000</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <strong>경희대학교</strong>
+                                    <div>
+                                        <p>사용 금액 <span>2,900,000</span></p>
+                                        <span class="c_gray8">총 예산&ensp;</span>
+                                        <span>5,000,000</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <strong>부산대학교</strong>
+                                    <div>
+                                        <p>사용 금액 <span>2,800,000</span></p>
+                                        <span class="c_gray8">총 예산&ensp;</span>
+                                        <span>5,000,000</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <strong>전북대학교</strong>
+                                    <div>
+                                        <p>사용 금액 <span>2,600,000</span></p>
+                                        <span class="c_gray8">총 예산&ensp;</span>
+                                        <span>5,000,000</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <article class="box_content wn_auto">
+                    <div class="tit_box type2">
+                        <h3>종량제 인기 도서 TOP 10</h3>
+                    </div>
+                    <div class="box_item book_swiper-wrap">
+                        <div class="swiper book_swiper book_usage">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide book_item">
+                                    <span class="num">1</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover1.png" alt="책 표지 이미지"></div>
+                                    <h3>하마터면 행복을 모르고 죽을 뻔했다</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>432</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">2</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover2.png" alt="책 표지 이미지"></div>
+                                    <h3>환한 숨</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>783</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">3</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover3.png" alt="책 표지 이미지"></div>
+                                    <h3>자꾸만 비집고 나오는 마음, 떠나지 못한 어느 시간에서 쓰다</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>120</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">4</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover4.png" alt="책 표지 이미지"></div>
+                                    <h3>아킬레우스의 노래</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>83</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">5</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover5.png" alt="책 표지 이미지"></div>
+                                    <h3>너의 모든 선택을 응원해</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>906</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">6</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover6.png" alt="책 표지 이미지"></div>
+                                    <h3>나를 사랑하는 시간들</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>57</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">7</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover7.png" alt="책 표지 이미지"></div>
+                                    <h3>읽어요 그럼 보여요 글과 그림 사이</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>164</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">8</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover8.png" alt="책 표지 이미지"></div>
+                                    <h3>나를 돌보는게 서툰 어른을 위한 애착 수업</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>41</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">9</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover9.png" alt="책 표지 이미지"></div>
+                                    <h3>지식인의 옷장, 알고 있는 즐거움을 위한 패션 인문학</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>335</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">10</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover10.png" alt="책 표지 이미지"></div>
+                                    <h3>불안이라는 위안</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>500</strong>권</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-button-prev book-prev book-prev-usage"></div>
+                        <div class="swiper-button-next book-next book-next-usage"></div>
+                    </div>
+                </article>
+
+                <article class="box_content wn_auto">
+                    <div class="tit_box type2">
+                        <h3>인기 도서 TOP 10</h3>
+                    </div>
+                    <div class="box_item book_swiper-wrap">
+                        <div class="swiper book_swiper book_flat">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide book_item">
+                                    <span class="num">1</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover11.png" alt="책 표지 이미지"></div>
+                                    <h3>매일 쓸것, 뭐라도 쓸것</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>732</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">2</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover12.png" alt="책 표지 이미지"></div>
+                                    <h3>나는 착한 딸을 그만두기로 했다</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>50</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">3</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover13.png" alt="책 표지 이미지"></div>
+                                    <h3>수영장의 바닥, 물속에서 건져 올린 삶의 지혜들</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>254</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">4</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover14.png" alt="책 표지 이미지"></div>
+                                    <h3>역사를 배우는 사람들</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>901</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">5</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover15.png" alt="책 표지 이미지"></div>
+                                    <h3>무엇도 홀로 존재하지 않는다</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>178</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">6</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover16.png" alt="책 표지 이미지"></div>
+                                    <h3>너 내 동료가 되어라, 우리는 망고소프트를 이끌어갈 인재를 기다립니다</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>193</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">7</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover17.png" alt="책 표지 이미지"></div>
+                                    <h3>그림자에 민감해지기</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>25</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">8</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover18.png" alt="책 표지 이미지"></div>
+                                    <h3>길 위에 음악을 펼치다, 행악</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>90</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">9</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover19.png" alt="책 표지 이미지"></div>
+                                    <h3>절망과 열정의 시대</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>683</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">10</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover20.png" alt="책 표지 이미지"></div>
+                                    <h3>왜 시계 태엽 바나나가 아니라 시계태엽 오렌지일까?</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>297</strong>권</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-button-prev book-prev book-prev-flat"></div>
+                        <div class="swiper-button-next book-next book-next-flat"></div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

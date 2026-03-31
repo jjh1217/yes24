@@ -203,6 +203,11 @@ q:before, q:after {
   border-radius: 999px !important;
 }
 
+.br_rd {
+  border: 1px solid var(--color-gray4);
+  border-radius: 20px;
+}
+
 /* font */
 @font-face {
   font-family: "Pretendard";
@@ -571,26 +576,26 @@ q:before, q:after {
   background-image: url("../img/ico_stat_wh.svg");
 }
 
-.ico_calculate {
+.ico_settlement {
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url("../img/ico_calculate.svg");
+  background-image: url("../img/ico_settlement.svg");
   /* active 상태 */
 }
-.ico_calculate.active, .active > .ico_calculate {
-  background-image: url("../img/ico_calculate_wh.svg");
+.ico_settlement.active, .active > .ico_settlement {
+  background-image: url("../img/ico_settlement_wh.svg");
 }
-.ico_calculate {
+.ico_settlement {
   /* hover 상태 */
 }
-.ico_calculate:hover, :hover > .ico_calculate {
-  background-image: url("../img/ico_calculate_wh.svg");
+.ico_settlement:hover, :hover > .ico_settlement {
+  background-image: url("../img/ico_settlement_wh.svg");
 }
-.ico_calculate {
+.ico_settlement {
   /* active + hover (active 우선) */
 }
-.ico_calculate.active:hover, :hover > .ico_calculate.active {
-  background-image: url("../img/ico_calculate_wh.svg");
+.ico_settlement.active:hover, :hover > .ico_settlement.active {
+  background-image: url("../img/ico_settlement_wh.svg");
 }
 
 .ico_lock {
@@ -673,6 +678,10 @@ q:before, q:after {
 
 .h_auto {
   height: auto !important;
+}
+
+.m_auto {
+  margin: 0 auto !important;
 }
 
 .w_0 {
@@ -1659,6 +1668,246 @@ q:before, q:after {
   min-height: 400px !important;
 }
 
+.w_410 {
+  width: 410px !important;
+}
+
+.wx_410 {
+  max-width: 410px !important;
+}
+
+.wn_410 {
+  min-width: 410px !important;
+}
+
+.h_410 {
+  height: 410px !important;
+}
+
+.hx_410 {
+  max-height: 410px !important;
+}
+
+.hn_410 {
+  min-height: 410px !important;
+}
+
+.w_420 {
+  width: 420px !important;
+}
+
+.wx_420 {
+  max-width: 420px !important;
+}
+
+.wn_420 {
+  min-width: 420px !important;
+}
+
+.h_420 {
+  height: 420px !important;
+}
+
+.hx_420 {
+  max-height: 420px !important;
+}
+
+.hn_420 {
+  min-height: 420px !important;
+}
+
+.w_430 {
+  width: 430px !important;
+}
+
+.wx_430 {
+  max-width: 430px !important;
+}
+
+.wn_430 {
+  min-width: 430px !important;
+}
+
+.h_430 {
+  height: 430px !important;
+}
+
+.hx_430 {
+  max-height: 430px !important;
+}
+
+.hn_430 {
+  min-height: 430px !important;
+}
+
+.w_440 {
+  width: 440px !important;
+}
+
+.wx_440 {
+  max-width: 440px !important;
+}
+
+.wn_440 {
+  min-width: 440px !important;
+}
+
+.h_440 {
+  height: 440px !important;
+}
+
+.hx_440 {
+  max-height: 440px !important;
+}
+
+.hn_440 {
+  min-height: 440px !important;
+}
+
+.w_450 {
+  width: 450px !important;
+}
+
+.wx_450 {
+  max-width: 450px !important;
+}
+
+.wn_450 {
+  min-width: 450px !important;
+}
+
+.h_450 {
+  height: 450px !important;
+}
+
+.hx_450 {
+  max-height: 450px !important;
+}
+
+.hn_450 {
+  min-height: 450px !important;
+}
+
+.w_460 {
+  width: 460px !important;
+}
+
+.wx_460 {
+  max-width: 460px !important;
+}
+
+.wn_460 {
+  min-width: 460px !important;
+}
+
+.h_460 {
+  height: 460px !important;
+}
+
+.hx_460 {
+  max-height: 460px !important;
+}
+
+.hn_460 {
+  min-height: 460px !important;
+}
+
+.w_470 {
+  width: 470px !important;
+}
+
+.wx_470 {
+  max-width: 470px !important;
+}
+
+.wn_470 {
+  min-width: 470px !important;
+}
+
+.h_470 {
+  height: 470px !important;
+}
+
+.hx_470 {
+  max-height: 470px !important;
+}
+
+.hn_470 {
+  min-height: 470px !important;
+}
+
+.w_480 {
+  width: 480px !important;
+}
+
+.wx_480 {
+  max-width: 480px !important;
+}
+
+.wn_480 {
+  min-width: 480px !important;
+}
+
+.h_480 {
+  height: 480px !important;
+}
+
+.hx_480 {
+  max-height: 480px !important;
+}
+
+.hn_480 {
+  min-height: 480px !important;
+}
+
+.w_490 {
+  width: 490px !important;
+}
+
+.wx_490 {
+  max-width: 490px !important;
+}
+
+.wn_490 {
+  min-width: 490px !important;
+}
+
+.h_490 {
+  height: 490px !important;
+}
+
+.hx_490 {
+  max-height: 490px !important;
+}
+
+.hn_490 {
+  min-height: 490px !important;
+}
+
+.w_500 {
+  width: 500px !important;
+}
+
+.wx_500 {
+  max-width: 500px !important;
+}
+
+.wn_500 {
+  min-width: 500px !important;
+}
+
+.h_500 {
+  height: 500px !important;
+}
+
+.hx_500 {
+  max-height: 500px !important;
+}
+
+.hn_500 {
+  min-height: 500px !important;
+}
+
 .wp_1 {
   width: 1% !important;
 }
@@ -1699,8 +1948,40 @@ q:before, q:after {
   width: 10% !important;
 }
 
+.wp_11 {
+  width: 11% !important;
+}
+
+.wp_12 {
+  width: 12% !important;
+}
+
+.wp_13 {
+  width: 13% !important;
+}
+
+.wp_14 {
+  width: 14% !important;
+}
+
 .wp_15 {
   width: 15% !important;
+}
+
+.wp_16 {
+  width: 16% !important;
+}
+
+.wp_17 {
+  width: 17% !important;
+}
+
+.wp_18 {
+  width: 18% !important;
+}
+
+.wp_19 {
+  width: 19% !important;
 }
 
 .wp_20 {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YES24 크레마클럽</title>
+
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://b2b.yes24.com/admin">
+    <meta property="og:title" content="YES24 CREMA CLUB B2B Admin System">
+    <meta property="og:description" content="YES24 CREMA CLUB B2B 관리자 시스템으로 기업 고객의 주문, 정산, 회원 관리 등을 손쉽게 할 수 있습니다.">
+    <meta property="og:image" content="https://b2b.yes24.com/assets/img/sns_logo.png">
+
+    <!-- favicon -->
+    <link rel="icon" href="../assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
+
+    <!-- script -->
+    <script type="text/javascript" src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./assets/js/common.js"></script>
+</head>
+<body>
+    <div class="acct_wrap">
+        <div class="acct_box">
+            <section class="acct_visual">
+                <h2>Welcome Back</h2>
+                <p>Crema Club<br>B2B Management System</p>
+                <img src="./assets/img/account_bg.png" alt="">
+            </section>
+            <section class="acct_content">
+                <h1>
+                    <img src="../assets/img/logo.svg" alt="YES24 로고 이미지">
+                    <strong>비밀번호 찾기</strong>
+                </h1>
+                <form action="#" class="acct_form">
+                    <fieldset class="item">
+                        <legend>비밀번호 찾기 입력란</legend>
+                        <input type="text" aria-label="아이디" placeholder="아이디를 입력해주세요.">
+                        <input type="text" aria-label="담당자명" placeholder="담당자명을 입력해주세요.">
+                        <input type="text" aria-label="E-mail" placeholder="E-mail를 입력해주세요.">
+                        <p class="msg">* 관리자 계정으로 등록된 이메일로 인증해 주세요.</p>
+                        <button type="button" class="btn full fill_blue confirm_open" data-type="authNum_get">인증번호 받기</button>
+                        <input type="text" aria-label="인증번호" placeholder="인증번호를 입력해주세요.">
+                        <button type="button" class="btn full fill_blue confirm_open" data-type="authNum_chk">인증번호 확인</button>
+                    </fieldset>
+                    <div class="btn_box">
+                        <a href="./account_login.html" class="btn lg w_100 p_0 fill_gray">취소</a>
+                        <button type="button" class="btn lg full fill_dark confirm_open" data-type="pwFind">비밀번호 찾기</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

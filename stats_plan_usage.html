@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YES24 크레마클럽</title>
+
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://b2b.yes24.com/admin">
+    <meta property="og:title" content="YES24 CREMA CLUB B2B Admin System">
+    <meta property="og:description" content="YES24 CREMA CLUB B2B 관리자 시스템으로 기업 고객의 주문, 정산, 회원 관리 등을 손쉽게 할 수 있습니다.">
+    <meta property="og:image" content="https://b2b.yes24.com/assets/img/sns_logo.png">
+
+    <!-- favicon -->
+    <link rel="icon" href="../assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
+
+    <!-- script -->
+    <script type="text/javascript" src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./assets/js/common.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <aside></aside>
+
+        <main>
+            <section class="box_content fx_no">
+                <div class="tit_box">
+                    <h2>종량제 이용 통계</h2>
+                </div>
+                <form action="#" class="box_item">
+                    <fieldset class="form_field as_start">
+                        <legend>종량제 이용 통계 검색란</legend>
+                        <div class="form_row">
+                            <label>고객사명</label>
+                            <div class="form_item">
+                                <input type="text" placeholder="고객사명을 입력하세요.">
+                            </div>
+                            <button type="button" class="btn fill_dark popup_open" data-type="client">검색</button>
+                        </div>
+                        <div class="form_row">
+                            <label>조회 날짜</label>
+                            <div class="form_item">
+                                <div class="select_box w_120">
+                                    <button type="button" class="val" aria-haspopup="listbox" aria-expanded="false" aria-label="연도 선택"></button>
+                                    <ul class="options" role="listbox">
+                                        <li role="option" aria-selected="true" tabindex="0">2026</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">2025</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">2024</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">2023</li>
+                                    </ul>
+                                </div>
+
+                                <div class="select_box w_auto fx_full">
+                                    <button type="button" class="val" aria-haspopup="listbox" aria-expanded="false" aria-label="월 선택"></button>
+                                    <ul class="options" role="listbox">
+                                        <li role="option" aria-selected="true" tabindex="0">1월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">2월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">3월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">4월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">5월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">6월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">7월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">8월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">9월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">10월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">11월</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">12월</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label>정렬 기준</label>
+                            <div class="select_box">
+                                <button type="button" class="val" aria-haspopup="listbox" aria-expanded="false" aria-label="정렬 기준 선택"></button>
+                                <ul class="options" role="listbox">
+                                    <li role="option" aria-selected="false" tabindex="-1">대여종수 수</li>
+                                    <li role="option" aria-selected="true" tabindex="0">대여권수 순</li>
+                                    <li role="option" aria-selected="false" tabindex="-1">독서율(%) 순</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn_box w_490 pl_20 pt_10">
+                            <button type="submit" class="btn fill_dark search"><i class="ico_search"></i>검색</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+
+            <section class="box_content">
+                <div class="box_item">
+                    <div class="summary">
+                        <ul class="item">
+                            <li>총 <span>2,535</span>건</li>
+                        </ul>
+                        <div class="select_box w_160 line_blue" data-placeholder="다운로드">
+                            <button type="button" class="val" aria-haspopup="listbox" aria-expanded="false" aria-label="다운로드 방식 선택"></button>
+                            <ul class="options" role="listbox">
+                                <li role="option" aria-selected="false" tabindex="-1">엑셀 다운로드</li>
+                                <li role="option" aria-selected="false" tabindex="-1">PDF 다운로드</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table_box no_hover"></div>
+                    <div class="fx_btw page_btw"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

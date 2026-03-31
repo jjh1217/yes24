@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YES24</title>
+    <title>YES24 크레마클럽</title>
+
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://b2b.yes24.com/admin">
+    <meta property="og:title" content="YES24 CREMA CLUB B2B Admin System">
+    <meta property="og:description" content="YES24 CREMA CLUB B2B 관리자 시스템으로 기업 고객의 주문, 정산, 회원 관리 등을 손쉽게 할 수 있습니다.">
+    <meta property="og:image" content="https://b2b.yes24.com/assets/img/sns_logo.png">
 
     <!-- favicon -->
-    <link rel="icon" href="./assets/img/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
+    <link rel="icon" href="../assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
 
     <!-- stylesheets -->
-    <link rel="stylesheet" href="./assets/css/common.css">
-    <link rel="stylesheet" href="./assets/css/layout.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
 
     <!-- script -->
     <script type="text/javascript" src="./assets/js/jquery-3.7.1.min.js"></script>
@@ -35,8 +43,8 @@
                 <div class="tit_box">
                     <h2>고객사 조회</h2>
                 </div>
-                <div class="box_item">
-                    <fieldset class="form_field">
+                <form action="#" class="box_item">
+                    <fieldset class="form_field as_start">
                         <legend>고객사 조회 검색란</legend>
                         <div class="form_row">
                             <label>고객사명</label>
@@ -70,9 +78,11 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn fill_dark search"><i class="ico_search"></i>검색</button>
+                        <div class="btn_box px_20 pt_10">
+                            <button type="submit" class="btn fill_dark search"><i class="ico_search"></i>검색</button>
+                        </div>
                     </fieldset>
-                </div>
+                </form>
             </section>
 
             <section class="box_content">
@@ -81,7 +91,7 @@
                         <ul class="item">
                             <li>총 <span>2,535</span>건</li>
                         </ul>
-                        <button type="button" class="btn fill_blue">엑셀 다운로드</button>
+                        <button type="button" class="btn fill_blue confirm_open" data-type="excel">엑셀 다운로드</button>
                     </div>
                     <div class="table_box" data-href="client_info"></div>
                     <div class="fx_btw page_btw"></div>

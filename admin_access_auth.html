@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YES24 크레마클럽</title>
+
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://b2b.yes24.com/admin">
+    <meta property="og:title" content="YES24 CREMA CLUB B2B Admin System">
+    <meta property="og:description" content="YES24 CREMA CLUB B2B 관리자 시스템으로 기업 고객의 주문, 정산, 회원 관리 등을 손쉽게 할 수 있습니다.">
+    <meta property="og:image" content="https://b2b.yes24.com/assets/img/sns_logo.png">
+
+    <!-- favicon -->
+    <link rel="icon" href="../assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
+
+    <!-- script -->
+    <script type="text/javascript" src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./assets/js/common.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <aside></aside>
+
+        <main>
+            <section class="box_content fx_no">
+                <div class="tit_box">
+                    <h2>접근권한 내역 조회</h2>
+                </div>
+                <form action="#" class="box_item">
+                    <fieldset class="form_field as_start">
+                        <legend>접근권한 내역 조회 검색란</legend>
+                        <div class="form_row">
+                            <label>검색어</label>
+                            <div class="form_item">
+                                <input type="text" placeholder="관리자 ID 또는 관리자명을 입력하세요.">
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label>수행업무</label>
+                            <div class="select_box">
+                                <button type="button" class="val" aria-haspopup="listbox" aria-expanded="false" aria-label="수행업무 선택"></button>
+                                <ul class="options" role="listbox">
+                                    <li role="option" aria-selected="true" tabindex="0">전체</li>
+                                    <li role="option" aria-selected="false" tabindex="-1">조회</li>
+                                    <li role="option" aria-selected="false" tabindex="-1">등록</li>
+                                    <li role="option" aria-selected="false" tabindex="-1">수정</li>
+                                    <li role="option" aria-selected="false" tabindex="-1">삭제</li>
+                                    <li role="option" aria-selected="false" tabindex="-1">엑셀 다운로드</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label>접속일</label>
+                            <div class="form_item">
+                                <input type="text" class="datepicker">
+                                <span class="txt">~</span>
+                                <input type="text" class="datepicker">
+                            </div>
+                        </div>
+                        <div class="btn_box px_20 pt_10">
+                            <button type="submit" class="btn fill_dark search"><i class="ico_search"></i>검색</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="box_content">
+                <div class="box_item">
+                    <div class="summary">
+                        <ul class="item">
+                            <li>총 <span>2,535</span>건</li>
+                        </ul>
+                        <button type="button" class="btn fill_blue confirm_open" data-type="excel">엑셀 다운로드</button>
+                    </div>
+                    <div class="table_box no_hover"></div>
+                    <div class="fx_btw page_btw"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+/* account */
+.acct_wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: initial;
+  align-items: normal;
+  gap: 0;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
+  background-color: #E0F2FF;
+  overflow: auto;
+}
+
+.acct_box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: initial;
+  align-items: normal;
+  gap: 0 20px;
+  width: 80%;
+  max-width: 1200px;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 50px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 40px 0 #C8E8FF;
+}
+
+.acct_visual {
+  padding: 90px 40px 100px;
+  border-radius: 40px 0 0 40px;
+  background-color: #66BEFF;
+}
+.acct_visual > h2 {
+  font-size: 2.125rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+.acct_visual > p {
+  padding: 24px 0 50px;
+  font-size: 1.5rem;
+  color: var(--color-white);
+}
+
+.acct_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px 0;
+}
+.acct_content h1 > strong {
+  display: block;
+  padding-top: 20px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-black);
+}
+
+.acct_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: normal;
+  gap: 40px 0;
+  width: 450px;
+  padding: 20px;
+}
+.acct_form .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: normal;
+  gap: 10px 0;
+}
+.acct_form .item > input {
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 0 16px;
+  border: 1px solid var(--color-gray5);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background-color: var(--color-gray);
+  transition: border var(--transition-base);
+}
+.acct_form .item > input::placeholder {
+  color: var(--color-gray6);
+}
+.acct_form .item > input:focus {
+  border-color: var(--color-primary);
+}
+.acct_form .msg {
+  font-size: 0.875rem;
+  line-height: 20px;
+}
+.acct_form .msg > span {
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: -0.35px;
+}
+.acct_form .dormant {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: center;
+  gap: 10px 0;
+  padding: 30px 20px;
+  border-radius: 8px;
+  background-color: var(--color-gray);
+}
+.acct_form .dormant > li {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.35px;
+}
+
+.acct_etc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0 20px;
+  padding-top: 10px;
+}
+.acct_etc > a {
+  display: inline-block;
+  position: relative;
+  font-size: 0.875rem;
+}
+.acct_etc > a:hover {
+  color: var(--color-primary);
+}
+.acct_etc > a:not(:first-child)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  width: 1px;
+  height: 12px;
+  background-color: var(--color-gray5);
+}
+
+/*# sourceMappingURL=account.css.map */

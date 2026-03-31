@@ -151,6 +151,10 @@ q:before, q:after {
     transition: opacity var(--transition-base);
 }
 .round {border-radius: 999px !important;}
+.br_rd {
+    border: 1px solid var(--color-gray4);
+    border-radius: 20px;
+}
 
 /* font */
 @font-face {
@@ -206,7 +210,7 @@ $icons: (
     administer: (hover: true, active: wh),
     alarm: (hover: true, active: wh),
     stat: (hover: true, active: wh),
-    calculate: (hover: true, active: wh),
+    settlement: (hover: true, active: wh),
     lock: (hover: false, active: none),
     admin_header: (hover: false, active: none),
     alarm_header: (hover: false, active: on),
@@ -261,7 +265,8 @@ $icons: (
 .w_auto {width: auto !important;}
 .wn_auto {min-width: auto !important;}
 .h_auto {height: auto !important;}
-@for $i from 0 through 40 {
+.m_auto {margin: 0 auto !important;}
+@for $i from 0 through 50 {
     .w_#{$i * 10} {width: #{$i * 10}px !important;}
     .wx_#{$i * 10} {max-width: #{$i * 10}px !important;}
     .wn_#{$i * 10} {min-width: #{$i * 10}px !important;}
@@ -270,7 +275,7 @@ $icons: (
     .hn_#{$i * 10} {min-height: #{$i * 10}px !important;}
 }
 @for $i from 1 through 100 {
-    @if $i < 10 or ($i % 5 == 0) {
+    @if $i <= 20 or ($i > 20 and $i % 5 == 0) {
         .wp_#{$i} {
             width: $i * 1% !important;
         }

@@ -1,0 +1,107 @@
+@use 'variables' as *;
+
+/* account */
+.acct_wrap {
+    @include grid_box();
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 40px 0;
+    background-color: #E0F2FF;
+    overflow: auto;
+}
+.acct_box {
+    @include grid_box($col: repeat(2, 1fr), $gap: 0 20px);
+    width: 80%;
+    max-width: 1200px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 40px 0 #C8E8FF;
+}
+.acct_visual {
+    padding: 90px 40px 100px;
+    border-radius: 40px 0 0 40px;
+    background-color: #66BEFF;
+    > h2 {
+        font-size: 2.125rem;
+        font-weight: 700;
+        color: var(--color-white);
+    }
+    > p {
+        padding: 24px 0 50px;
+        font-size: 1.5rem;
+        color: var(--color-white);
+    }
+}
+.acct_content {
+    @include flex_col($just:center, $align: center, $gap: 60px 0);
+    h1 > strong {
+        display: block;
+        padding-top: 20px;
+        font-size: 1.875rem;
+        font-weight: 700;
+        text-align: center;
+        color: var(--color-black);
+    }
+}
+.acct_form {
+    @include flex_col($gap: 40px 0);
+    width: 450px;
+    padding: 20px;
+    .item {
+        @include flex_col($gap: 10px 0);
+        > input {
+            display: block;
+            width: 100%;
+            height: 60px;
+            padding: 0 16px;
+            border: 1px solid var(--color-gray5);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            background-color: var(--color-gray);
+            transition: border var(--transition-base);
+            &::placeholder {color: var(--color-gray6);}
+            &:focus {border-color: var(--color-primary);}
+        }
+    }
+    .msg {
+        font-size: 0.875rem;
+        line-height: 20px;
+        > span {
+            font-size: inherit;
+            line-height: inherit;
+            letter-spacing: -0.35px;
+        }
+    }
+    .dormant {
+        @include flex_col($align: center, $gap: 10px 0);
+        padding: 30px 20px;
+        border-radius: 8px;
+        background-color: var(--color-gray);
+        > li {
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: -0.35px;
+        }
+    }
+}
+.acct_etc {
+    @include flex_row($just: center, $align: center, $gap: 0 20px);
+    padding-top: 10px;
+    > a {
+        display: inline-block;
+        position: relative;
+        font-size: 0.875rem;
+        &:hover {color: var(--color-primary);}
+        &:not(:first-child)::after {
+            content: '';
+            display: block;
+            @include pos_centerTop($left: -10px);
+            width: 1px;
+            height: 12px;
+            background-color: var(--color-gray5);
+        }
+    }
+}

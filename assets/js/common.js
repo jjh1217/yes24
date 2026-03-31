@@ -1,14 +1,23 @@
 $(function(){
+    //include - 로컬 환경에서만 사용
     $('header').load('../../inclube/header.html');
     $('aside').load('../../inclube/aside.html', function(){
         $.getJSON('../../assets/js/menu.json', function(menuData){
             menuInit(menuData);
         });
     });
-    $('.table_box').load('../../inclube/table.html');
+    $('.table_box').each(function() {
+        if ($(this).closest('.popup_wrap').length > 0 || $(this).find('.no_sc').length > 0) return;
+        $(this).load('../../inclube/table.html');
+    });
     $('.page_btw').load('../../inclube/page.html');
 
-    //menu active 함수
+    //js 호출 - 로컬 환경에서만 사용
+    $.getScript('../../assets/js/confirm.js');
+    $.getScript('../../assets/js/popup.js');
+    $.getScript('../../assets/js/select.js');
+
+    //menu - active 함수
     function menuInit(menuData){
         const currentPath = window.location.pathname.split("/").pop();
         let currentMenu = null;
@@ -93,32 +102,6 @@ $(function(){
         }
     });
 
-    //confirm - 열기
-    $(document).on('click', '.confirm_open', function(){
-        $('.confirm_wrap').fadeIn(200);
-    });
-
-    //confirm - 닫기
-    $(document).on('click', '.confirm_close', function(){
-        $(this).closest('.confirm_wrap').fadeOut(200);
-    });
-
-    //confirm - textarea 입력 시 버튼 활성화/비활성화
-    $(document).on('input', '.confirm_box > textarea', function(){
-        const $btn = $(this).closest('.confirm_box').find('.btn_confirm');
-        $btn.toggleClass('off', $.trim($(this).val()) === '');
-    });
-
-    //popup - 열기
-    $(document).on('click', '.popup_open', function(){
-        $('.popup_box').fadeIn(200);
-    });
-
-    //popup - 닫기
-    $(document).on('click', '.popup_close', function(){
-        $(this).closest('.popup_box').fadeOut(200);
-    });
-
     //alarm - 열기 & 닫기
     $(document).on('click', 'header .ico_alarm_header', function(){
         $(this).toggleClass('open');
@@ -140,8 +123,7 @@ $(function(){
     });
 
     //tab - 클릭
-    $(document).on('click', '.tab_box .item', function(e) {
-        e.preventDefault();
+    $(document).on('click', '.tab_box .item', function() {
         $(this).closest('.tab_box').find('.item').removeClass('active').attr('aria-selected', 'false');
         $(this).addClass('active').attr('aria-selected', 'true');
         $(this).focus();
@@ -179,7 +161,6 @@ $(function(){
 
             case 'Enter':
             case ' ':
-                e.preventDefault();
                 $tabs.removeClass('active').attr('aria-selected', 'false');
                 $(this).addClass('active').attr('aria-selected', 'true');
             break;
@@ -191,127 +172,16 @@ $(function(){
         $(this).val($(this).val().replace(/[^0-9]/g, ''));
     });
 
-    //select - 전체 닫기
-    function closeAllSelect() {
-        $('.select_box').removeClass('open');
-        $('.select_box .val').attr('aria-expanded', 'false');
-        $('.select_box .options').attr('aria-hidden', 'true');
-    }
-
-    //select - selected 값 설정 및 placeholder 설정
-    $('.select_box').each(function(){
-        const $val = $(this).find('.val');
-        const $selected = $(this).find('[role="option"][aria-selected="true"]');
-        if ($selected.length) {
-            $val.text($selected.text()).removeClass('c_gray8');
-        } 
-        else if ($(this).data('placeholder')) {
-            $val.text($(this).data('placeholder')).addClass('c_gray8');
-        }
-        $(this).find('.options').attr('aria-hidden', 'true');
-    });
-
-    //select - 열기
-    function openSelect($box, moveFocus = false) {
-        if ($box.hasClass('dsb')) return;
-        closeAllSelect();
-        $box.addClass('open');
-        const $btn = $box.find('.val');
-        $btn.attr('aria-expanded', 'true');
-        $box.find('.options').attr('aria-hidden', 'false');
-        if (moveFocus) {
-            const $selected = $box.find('[role="option"][aria-selected="true"]');
-            const $target = $selected.length ? $selected : $box.find('[role="option"]').first();
-            $target.focus();
-        }
-    }
-
-    //select - toggle
-    $(document).on('click', '.select_box .val', function(e){
-        e.stopPropagation();
-        const $selectBox = $(this).closest('.select_box');
-        if ($selectBox.hasClass('dsb')) return;
-        $selectBox.hasClass('open') ? closeAllSelect() : openSelect($selectBox);
-    });
-
-    //select - 옵션 선택 함수 (마우스)
-    function selectOption($option) {
-        const $selectBox = $option.closest('.select_box');
-        const $selectVal = $selectBox.find('.val');
-        $selectBox.find('[role="option"]').attr('aria-selected', 'false').attr('tabindex', -1);
-        $option.attr('aria-selected', 'true').attr('tabindex', 0);
-        $selectVal.text($option.text()).removeClass('c_gray8');
-        $selectBox.trigger('option:selected', [$option.text(), $option]);
-        closeAllSelect();
-        $selectVal.focus();
-    }
-
-    //select - 옵션 선택 (마우스)
-    $(document).on('click', '.select_box .options > li[role="option"]', function(e){
-        e.stopPropagation();
-        selectOption($(this));
-    });
-
-    //select - 버튼 키보드 제어
-    $(document).on('keydown', '.select_box .val', function(e){
-        const $selectBox = $(this).closest('.select_box');
-        switch (e.key) {
-            case 'Tab':
-                closeAllSelect();
-            break;
-            case 'ArrowDown':
-            case 'Enter':
-            case ' ':
-                e.preventDefault();
-                openSelect($selectBox, true);
-            break;
-            case 'Escape':
-                closeAllSelect();
-            break;
-        }
-    });
-
-    //select - 옵션 키보드 제어
-    $(document).on('keydown', '.select_box .options > li[role="option"]', function(e){
-        const $options = $(this).closest('.select_box').find('[role="option"]');
-        let index = $options.index(this);
-        switch (e.key) {
-            case 'Tab':
-                closeAllSelect();
-            break;
-            case 'ArrowDown':
-                e.preventDefault();
-                index = (index + 1) % $options.length;
-                $options.eq(index).focus();
-            break;
-            case 'ArrowUp':
-                e.preventDefault();
-                index = (index - 1 + $options.length) % $options.length;
-                $options.eq(index).focus();
-            break;
-            case 'Enter':
-            case ' ':
-                e.preventDefault();
-                selectOption($(this));
-            break;
-            case 'Escape':
-                e.preventDefault();
-                closeAllSelect();
-                $(this).closest('.select_box').find('.val').focus();
-            break;
-        }
-    });
-
     //table - all check 
-    $(document).on('change', '.tb_chk input[type="checkbox"]', function () {
-        if ($(this).closest('.tb_chk').hasClass('all_chk')) {
-            $('tbody .tb_chk input[type="checkbox"]').prop('checked', $(this).prop('checked'));
+    $(document).on('change', '.chk_bs input[type="checkbox"]', function () {
+        if ($(this).closest('.chk_bs').hasClass('chk_all')) {
+            $('.chk_bsBox .chk_bs input[type="checkbox"]').prop('checked', $(this).prop('checked'));
         } else {
-            $('.all_chk input[type="checkbox"]')
+            $('.chk_all input[type="checkbox"]')
             .prop(
                 'checked',
-                $('tbody .tb_chk input[type="checkbox"]').length ===
-                $('tbody .tb_chk input[type="checkbox"]:checked').length
+                $('.chk_bsBox .chk_bs input[type="checkbox"]').length ===
+                $('.chk_bsBox .chk_bs input[type="checkbox"]:checked').length
             );
         }
     });
@@ -322,6 +192,29 @@ $(function(){
         if (t_href) {
             window.location.href = t_href + ".html";
         } else {return;}
+    });
+
+    //datepicker - 초기 설정
+    const today = new Date();
+    const oneWeekAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+
+    // 한글 로케일 적용
+    $(".datepicker").datepicker({
+        dateFormat: "yy.mm.dd",
+        showAnim: "slideDown",
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        showMonthAfterYear: true,
+        monthNames: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+        monthNamesShort: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+        dayNamesMin: ["일","월","화","수","목","금","토"],
+        yearRange: (today.getFullYear() - 5) + ":" + today.getFullYear()
+    });
+
+    // 시작 / 종료 날짜 기본 설정
+    $(".form_item > .datepicker").each(function(index){
+        $(this).datepicker("setDate", index === 0 ? oneWeekAgo : today);
     });
 
     //외부 영역 클릭 시
@@ -337,6 +230,9 @@ $(function(){
             $('.ico_admin_header').removeClass('open');
             $('.user_stats').stop(true, true).fadeOut(200);
         }
+
+        //select - 내부 클릭 시 동작 없음
+        if ($(e.target).closest('.select_box').length) return;
 
         //select - 닫기
         closeAllSelect();

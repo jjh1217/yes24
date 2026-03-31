@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YES24 크레마클럽</title>
+
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://b2b.yes24.com/admin">
+    <meta property="og:title" content="YES24 CREMA CLUB B2B Admin System">
+    <meta property="og:description" content="YES24 CREMA CLUB B2B 관리자 시스템으로 기업 고객의 주문, 정산, 회원 관리 등을 손쉽게 할 수 있습니다.">
+    <meta property="og:image" content="https://b2b.yes24.com/assets/img/sns_logo.png">
+
+    <!-- favicon -->
+    <link rel="icon" href="../assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
+
+    <!-- script -->
+    <script type="text/javascript" src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./assets/js/common.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <aside></aside>
+
+        <main>
+            <form action="#" class="box_content">
+                <div class="tit_box">
+                    <h2>알림 설정 정보</h2>
+                </div>
+                <div class="box_item">
+                    <fieldset class="form_field fx_full">
+                        <legend>알림 설정 정보 입력란</legend>
+                        <div class="form_row">
+                            <label>고객사명</label>
+                            <div class="form_item">
+                                <input type="text" value="uiwang01" readonly>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label>알림 임계치</label>
+                            <div class="form_item">
+                                <input type="text" value="70%" readonly>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label>사이트 내 알림 설정</label>
+                            <div class="chk_box">
+                                <label class="item">
+                                    <input type="radio" name="chk_1" checked>
+                                    <span>이용중</span>
+                                </label>
+                                <label class="item">
+                                    <input type="radio" name="chk_1">
+                                    <span>이용 중지중</span>
+                                </label>
+                            </div>
+                            <p class="msg c_primary">※ 설정한 알림 임계치에 도달할 경우, 크레마클럽 관리자 시스템에서 알림을 받을 수 있습니다.</p>
+                        </div>
+                        <div class="form_row">
+                            <label>메일 알림 설정</label>
+                            <div class="chk_box">
+                                <label class="item">
+                                    <input type="radio" name="chk_2" checked>
+                                    <span>이용중</span>
+                                </label>
+                                <label class="item">
+                                    <input type="radio" name="chk_2">
+                                    <span>이용 중지중</span>
+                                </label>
+                            </div>
+                            <p class="msg c_primary">※ 설정한 알림 임계치에 도달할 경우, 등록된 e-mail로 메일을 받을 수 있습니다.</p>
+                        </div>
+                        <div class="form_row">
+                            <label class="req">E-mail</label>
+                            <div class="form_item">
+                                <input type="text" placeholder="E-mail를 입력하세요.">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="btn_box jc_end g_20">
+                        <button type="button" class="btn fill_gray lg round confirm_open" data-type="cancel">취소</button>
+                        <button type="button" class="btn fill_blue lg round confirm_open" data-type="update">수정</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

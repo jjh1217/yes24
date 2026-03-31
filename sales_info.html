@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YES24</title>
+    <title>YES24 크레마클럽</title>
+
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://b2b.yes24.com/admin">
+    <meta property="og:title" content="YES24 CREMA CLUB B2B Admin System">
+    <meta property="og:description" content="YES24 CREMA CLUB B2B 관리자 시스템으로 기업 고객의 주문, 정산, 회원 관리 등을 손쉽게 할 수 있습니다.">
+    <meta property="og:image" content="https://b2b.yes24.com/assets/img/sns_logo.png">
 
     <!-- favicon -->
-    <link rel="icon" href="./assets/img/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
+    <link rel="icon" href="../assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
 
     <!-- stylesheets -->
-    <link rel="stylesheet" href="./assets/css/common.css">
-    <link rel="stylesheet" href="./assets/css/layout.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
 
     <!-- script -->
     <script type="text/javascript" src="./assets/js/jquery-3.7.1.min.js"></script>
@@ -31,12 +39,87 @@
         <aside></aside>
 
         <main>
-            <section class="box_content">
+            <section class="box_content fx_no">
                 <div class="tit_box">
                     <h2>영업처 정보</h2>
                 </div>
+                <form action="#" class="box_item">
+                    <fieldset class="form_field as_start">
+                        <legend>영업처 정보 입련란</legend>
+                        <div class="form_row">
+                            <label class="req">영업처 구분</label>
+                            <div class="form_item">
+                                <div class="select_box">
+                                    <button type="button" class="val" aria-haspopup="listbox" aria-expanded="false" aria-label="영업처 구분 선택"></button>
+                                    <ul class="options" role="listbox">
+                                        <li role="option" aria-selected="false" tabindex="-1">전체</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">본사</li>
+                                        <li role="option" aria-selected="true" tabindex="0">총판</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">대리점</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label class="req">영업처명</label>
+                            <div class="form_item">
+                                <input type="text" placeholder="영업처명을 입력하세요." value="고양이미디어">
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label class="req">대표자명</label>
+                            <div class="form_item">
+                                <input type="text" placeholder="대표자명을 입력하세요." value="홍길동">
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label>지역</label>
+                            <div class="form_item">
+                                <div class="select_box">
+                                    <button type="button" class="val" aria-haspopup="listbox" aria-expanded="false" aria-label="지역 선택"></button>
+                                    <ul class="options" role="listbox">
+                                        <li role="option" aria-selected="false" tabindex="-1">서울특별시</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">부산광역시</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">대구광역시</li>
+                                        <li role="option" aria-selected="true" tabindex="0">인천광역시</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">광주광역시</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">대전광역시</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">울산광역시</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">세종특별자치시</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">경기도</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">강원도</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">충청북도</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">충청남도</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">전라북도</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">전라남도</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">경상북도</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">경상남도</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">제주도</li>
+                                        <li role="option" aria-selected="false" tabindex="-1">해외</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label>사업자번호</label>
+                            <div class="form_item numOnly">
+                                <input type="text" placeholder="사업자번호를 입력하세요.">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="box_content">
                 <div class="box_item">
-
+                    <div class="tit_box">
+                        <h4>담당 고객사 리스트</h4>
+                    </div>
+                    <div class="table_box no_hover"></div>
+                    <div class="fx_btw page_btw"></div>
+                    <div class="btn_box jc_end g_20">
+                        <button type="button" class="btn fill_gray lg round confirm_open" data-type="cancel">취소</button>
+                        <button type="button" class="btn fill_blue lg round confirm_open" data-type="update">수정</button>
+                    </div>
                 </div>
             </section>
         </main>

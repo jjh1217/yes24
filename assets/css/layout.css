@@ -44,12 +44,18 @@ header > nav .user {
   flex-direction: row;
   justify-content: initial;
   align-items: center;
-  gap: 0 10px;
+  gap: 0;
 }
 header > nav .user button {
-  width: 30px;
-  height: 30px;
-  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background-size: 30px;
+  background-position: center;
+  transition: background-color var(--transition-base);
+}
+header > nav .user button:hover {
+  background-color: var(--color-gray2);
 }
 
 /* aside */
@@ -190,6 +196,18 @@ main {
 }
 
 /* box */
+.box_tie {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: normal;
+  gap: 40px;
+  min-width: 1400px;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: var(--color-gray);
+}
+
 .box_content {
   display: flex;
   flex-direction: column;

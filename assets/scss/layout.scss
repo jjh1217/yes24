@@ -34,11 +34,15 @@ header {
             width: 214px;
         }
         .user {
-            @include flex_row($align: center, $gap: 0 10px);
+            @include flex_row($align: center);
             button {
-                width: 30px;
-                height: 30px;
-                background-size: 100%;
+                width: 40px;
+                height: 40px;
+                border-radius: 999px;
+                background-size: 30px;
+                background-position: center;
+                transition: background-color var(--transition-base);
+                &:hover {background-color: var(--color-gray2);}
             }
         }
     }
@@ -161,6 +165,13 @@ main {
 }
 
 /* box */
+.box_tie {
+    @include flex_col($gap: 40px);
+    min-width: 1400px;
+    padding: 40px;
+    border-radius: 20px;
+    background-color:var(--color-gray)
+}
 .box_content {
     @include flex_col();
     flex: 1;

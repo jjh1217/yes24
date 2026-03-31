@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YES24 크레마클럽</title>
+
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://b2b.yes24.com/admin">
+    <meta property="og:title" content="YES24 CREMA CLUB B2B Admin System">
+    <meta property="og:description" content="YES24 CREMA CLUB B2B 관리자 시스템으로 기업 고객의 주문, 정산, 회원 관리 등을 손쉽게 할 수 있습니다.">
+    <meta property="og:image" content="https://b2b.yes24.com/assets/img/sns_logo.png">
+
+    <!-- favicon -->
+    <link rel="icon" href="../assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
+
+    <!-- script -->
+    <script type="text/javascript" src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./assets/js/common.js"></script>
+
+    <!-- swiper -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- dashboard -->
+    <script type="text/javascript" src="./assets/js/dashboard.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header></header>
+
+        <aside></aside>
+
+        <main>
+            <section class="dash_tit">
+                <h2>고객사(종량제)&ensp;대시보드</h2>
+                <div class="item">
+                    <span>2026.02.20</span>
+                    <button type="button" class="btn fill_blue pdf confirm_open" data-type="pdfDownload">PDF 다운로드</button>
+                </div>
+            </section>
+            <section class="box_tie py_30">
+                <article class="dash_user">
+                    <p>안녕하세요. <span>구름가득미디어</span>입니다.</p>
+                    <ul class="tab_box as_start big">
+                        <li><a href="./dashboard.html" class="item">YES24 관리자</a></li>
+                        <li><a href="./dashboard_flat.html" class="item">고객사 (정액제)</a></li>
+                        <li><a href="./dashboard_usage.html" class="item active">고객사 (종량제)</a></li>
+                    </ul>
+                </article>
+            </section>
+            <section class="box_tie">
+                <div class="fx_row ai_normal g_40">
+                    <article class="box_content wn_auto">
+                        <div class="tit_box type2">
+                            <h3>예산 대비 사용 금액</h3>
+                        </div>
+                        <div class="dash_service type2">
+                            <div class="chart_donut">
+                                <canvas id="chartDonut"></canvas>
+                            </div>
+                            <ul class="dash_info">
+                                <li>
+                                    <h4 class="dot blue">사용 금액</h4>
+                                    <p><span>3,800,000</span>원</p>
+                                </li>
+                                <li>
+                                    <h4 class="dot">총 예산</h4>
+                                    <p><span>5,000,000</span>원</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+    
+                    <article class="box_content wn_auto">
+                        <div class="tit_box type2">
+                            <h3>현재 사용중인 서비스 모델</h3>
+                        </div>
+                        <div class="dash_service">
+                            <h3>종량제</h3>
+                            <ul class="dash_info">
+                                <li>
+                                    <h4>총 예산</h4>
+                                    <p><span>5,000,000</span>원</p>
+                                </li>
+                                <li>
+                                    <h4>이용자 한도</h4>
+                                    <p><span>1,000,000</span>원</p>
+                                </li>
+                                <li>
+                                    <h4>계약 기간</h4>
+                                    <p><span>2026.01.01</span> ~ <span>2026.02.01</span></p>
+                                </li>
+                                <li>
+                                    <h4>계약 만료일</h4>
+                                    <p class="c_primary">D-<span>25</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+    
+                    <article class="box_content wn_auto">
+                        <div class="tit_box type2">
+                            <h3>계약 기간 내 이용권 사용 정보</h3>
+                        </div>
+                        <div class="box_item">
+                            <ul class="figure_box fx_dc">
+                                <li>
+                                    <div class="item">
+                                        <i class="ico_figure_coupon"></i>
+                                        <span>이용권 등록 인원 수</span>
+                                    </div>
+                                    <strong>298</strong>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <i class="ico_figure_join"></i>
+                                        <span>이용자 수</span>
+                                    </div>
+                                    <strong>161</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <article class="box_content wn_auto">
+                    <div class="tit_box type2">
+                        <h3>최근 12개월 콘텐츠 이용 추이</h3>
+                    </div>
+                    <div class="box_item pt_0">
+                        <div class="chart_bar">
+                            <canvas id="chartBar"></canvas>
+                        </div>
+                        <div class="table_box py_30 px_40 no_hover chk_bsBox">
+                            <table class="no_sc">
+                                <caption>고객사 조회 목록</caption>
+                                <colgroup>
+                                    <col class="w_80">
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th><label class="chk_bs chk_all"><input type="checkbox"></label></th>
+                                        <th>기간</th>
+                                        <th>대여총수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><label class="chk_bs"><input type="checkbox"></label></td>
+                                        <td>26.02</td>
+                                        <td>102 <span class="rate ml_20 is_up">65권</span></td>
+                                    </tr>
+                                    <tr class="no_list">
+                                        <td><label class="chk_bs"><input type="checkbox"></label></td>
+                                        <td>26.01</td>
+                                        <td>645 <span class="rate ml_20 is_down">89권</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="chk_bs"><input type="checkbox"></label></td>
+                                        <td>25.12</td>
+                                        <td>432 <span class="rate ml_20 is_up">134권</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="chk_bs"><input type="checkbox"></label></td>
+                                        <td>25.11</td>
+                                        <td>642 <span class="rate ml_20 is_down">90권</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="chk_bs"><input type="checkbox"></label></td>
+                                        <td>25.09</td>
+                                        <td>38 <span class="rate ml_20 is_up">10권</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="chk_bs"><input type="checkbox"></label></td>
+                                        <td>25.08</td>
+                                        <td>198 <span class="rate ml_20 is_up">582권</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="chk_bs"><input type="checkbox"></label></td>
+                                        <td>25.10</td>
+                                        <td>274 <span class="rate ml_20 is_down">284권</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="box_content wn_auto">
+                    <div class="tit_box type2">
+                        <h3>인기 도서 TOP 10</h3>
+                    </div>
+                    <div class="box_item book_swiper-wrap">
+                        <div class="swiper book_swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide book_item">
+                                    <span class="num">1</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover11.png" alt="책 표지 이미지"></div>
+                                    <h3>매일 쓸것, 뭐라도 쓸것</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>732</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">2</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover12.png" alt="책 표지 이미지"></div>
+                                    <h3>나는 착한 딸을 그만두기로 했다</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>50</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">3</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover13.png" alt="책 표지 이미지"></div>
+                                    <h3>수영장의 바닥, 물속에서 건져 올린 삶의 지혜들</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>254</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">4</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover14.png" alt="책 표지 이미지"></div>
+                                    <h3>역사를 배우는 사람들</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>901</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">5</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover15.png" alt="책 표지 이미지"></div>
+                                    <h3>무엇도 홀로 존재하지 않는다</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>178</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">6</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover16.png" alt="책 표지 이미지"></div>
+                                    <h3>너 내 동료가 되어라, 우리는 망고소프트를 이끌어갈 인재를 기다립니다</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>193</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">7</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover17.png" alt="책 표지 이미지"></div>
+                                    <h3>그림자에 민감해지기</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>25</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">8</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover18.png" alt="책 표지 이미지"></div>
+                                    <h3>길 위에 음악을 펼치다, 행악</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>90</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">9</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover19.png" alt="책 표지 이미지"></div>
+                                    <h3>절망과 열정의 시대</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>683</strong>권</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide book_item">
+                                    <span class="num">10</span>
+                                    <div class="cover"><img src="./assets/img/book/book_cover20.png" alt="책 표지 이미지"></div>
+                                    <h3>왜 시계 태엽 바나나가 아니라 시계태엽 오렌지일까?</h3>
+                                    <div class="info">
+                                        <span>대여권수</span>
+                                        <p><strong>297</strong>권</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-button-prev book-prev"></div>
+                        <div class="swiper-button-next book-next"></div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
