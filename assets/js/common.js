@@ -1,21 +1,21 @@
 $(function(){
     //include - 로컬 환경에서만 사용
-    $('header').load('../../inclube/header.html');
-    $('aside').load('../../inclube/aside.html', function(){
-        $.getJSON('../../assets/js/menu.json', function(menuData){
+    $('header').load('/inclube/header.html');
+    $('aside').load('/inclube/aside.html', function(){
+        $.getJSON('/assets/js/menu.json', function(menuData){
             menuInit(menuData);
         });
     });
     $('.table_box').each(function() {
         if ($(this).closest('.popup_wrap').length > 0 || $(this).find('.no_sc').length > 0) return;
-        $(this).load('../../inclube/table.html');
+        $(this).load('/inclube/table.html');
     });
-    $('.page_btw').load('../../inclube/page.html');
+    $('.page_btw').load('/inclube/page.html');
 
     //js 호출 - 로컬 환경에서만 사용
-    $.getScript('../../assets/js/confirm.js');
-    $.getScript('../../assets/js/popup.js');
-    $.getScript('../../assets/js/select.js');
+    $.getScript('/assets/js/confirm.js');
+    $.getScript('/assets/js/popup.js');
+    $.getScript('/assets/js/select.js');
 
     //menu - active 함수
     function menuInit(menuData){
@@ -41,7 +41,6 @@ $(function(){
         $('.gnb li a.item').removeClass('active');
         currentMenu.pages.forEach(p => {
             $('.gnb li a.item').each(function(){
-                // href에서 ../나 절대 경로 제거, .html 제거
                 const hrefPath = $(this).attr('href').split('/').pop().replace(/\.html$/,'');
                 const pagePath = p.url.replace(/\.html$/,'');
                 if(hrefPath === pagePath){
@@ -62,8 +61,9 @@ $(function(){
             const lnbHtml = currentMenu.pages
                 .filter(p => !p.parent)
                 .map(p => {
-                const href = isLocal ? `../${p.url}.html` : `../${p.url}`;
-                return `<li><a href="${href}" class="item ${p.url.replace(/\.html$/,'') === activePageUrl ? 'active' : ''}">${p.name}</a></li>`;})
+                    const href = isLocal ? `../${p.url}.html` : `../${p.url}`;
+                    return `<li><a href="${href}" class="item ${p.url.replace(/\.html$/,'') === activePageUrl ? 'active' : ''}">${p.name}</a></li>`;
+                })
                 .join('');
             $('aside .menuSub .lnb').html(lnbHtml);
         }
