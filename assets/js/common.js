@@ -23,6 +23,9 @@ $(function(){
         let currentMenu = null;
         let activePageUrl = currentPath;
 
+        //로컬 환경 여부
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
         //menu 및 현재 page 찾기
         for(const menu of menuData.menu){
             const page = menu.pages.find(p => p.url === currentPath);
@@ -58,7 +61,9 @@ $(function(){
             // lnb - 생성 (parent 없는 페이지만)
             const lnbHtml = currentMenu.pages
                 .filter(p => !p.parent)
-                .map(p => `<li><a href="../${p.url}.html" class="item ${p.url === activePageUrl ? 'active' : ''}">${p.name}</a></li>`)
+                .map(p => {
+                const href = isLocal ? `../${p.url}.html` : `../${p.url}`;
+                return `<li><a href="${href}" class="item ${p.url.replace(/\.html$/,'') === activePageUrl ? 'active' : ''}">${p.name}</a></li>`;})
                 .join('');
             $('aside .menuSub .lnb').html(lnbHtml);
         }
