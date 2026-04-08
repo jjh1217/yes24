@@ -19,7 +19,7 @@ $(function(){
 
     //menu - active 함수
     function menuInit(menuData){
-        const currentPath = window.location.pathname.split("/").pop();
+        const currentPath = window.location.pathname.split("/").pop().replace('.html','');
         let currentMenu = null;
         let activePageUrl = currentPath;
 
