@@ -19,10 +19,7 @@ $(function(){
 
     //menu - active 함수
     function menuInit(menuData){
-        let currentPath = window.location.pathname.split("/").pop();
-        if (!currentPath.endsWith('.html')) {
-            currentPath += '.html';
-        }
+        const currentPath = window.location.pathname.split("/").pop().replace('.html','');
         let currentMenu = null;
         let activePageUrl = currentPath;
 
@@ -39,7 +36,16 @@ $(function(){
 
         //gnb - active
         $('.gnb li a.item').removeClass('active');
-        currentMenu.pages.forEach(p => $('.gnb li a.item[href$="' + p.url + '"]').addClass('active'));
+        currentMenu.pages.forEach(p => {
+            $('.gnb li a.item').each(function(){
+                // href에서 ../나 절대 경로 제거, .html 제거
+                const hrefPath = $(this).attr('href').split('/').pop().replace(/\.html$/,'');
+                const pagePath = p.url.replace(/\.html$/,'');
+                if(hrefPath === pagePath){
+                    $(this).addClass('active');
+                }
+            });
+        });
 
         //menuSub - 생성
         if(currentMenu.icon !== "ico_dashboard"){
@@ -52,7 +58,7 @@ $(function(){
             // lnb - 생성 (parent 없는 페이지만)
             const lnbHtml = currentMenu.pages
                 .filter(p => !p.parent)
-                .map(p => `<li><a href="../${p.url}" class="item ${p.url === activePageUrl ? 'active' : ''}">${p.name}</a></li>`)
+                .map(p => `<li><a href="../${p.url}.html" class="item ${p.url === activePageUrl ? 'active' : ''}">${p.name}</a></li>`)
                 .join('');
             $('aside .menuSub .lnb').html(lnbHtml);
         }
